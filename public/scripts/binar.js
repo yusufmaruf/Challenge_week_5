@@ -46,7 +46,6 @@ let allCars;
 
 Binar.listCars().then((cars) => {
   allCars = cars;
-  // You can replace this with code to display all the cars in the HTML.
 });
 
 document.getElementById('btn-search').addEventListener('click', function () {
@@ -83,11 +82,6 @@ document.getElementById('btn-search').addEventListener('click', function () {
     return false; // Exclude the car from the filtered results
   }
 
-  // const filteredCars = allCars.filter(filterCars);
-
-  // Handle the filtered cars, e.g., display them on the page
-  // console.log(filteredCars);
-    // Function to generate HTML elements for a car
   function createCarElement(car) {
     const carElement = document.createElement('div');
     carElement.classList.add('col-md-4', 'col-sm-6', 'mb-4');
@@ -118,43 +112,4 @@ document.getElementById('btn-search').addEventListener('click', function () {
     const carElement = createCarElement(car);
     carsContainer.appendChild(carElement);
   });
-  // You can replace this with code to display the filtered cars in the HTML.
 });
-
-
-// document.getElementById('btn-search').addEventListener('click', function () {
-//   const selectedDriver = document.getElementById('driver').value;
-//   const selectedTanggal = document.getElementById('tanggal').value;
-//   const selectedJemput = document.getElementById('jemput').value;
-//   const selectedJmlPenumpang = document.getElementById('jmlPenumpang').value;
-//   console.log('Selected Tanggal:', selectedTanggal);
-
-//   // Define the filtering function
-//   function filterCars(car) {
-//     const carDate = new Date(car.availableAt);
-//     carDate.setHours(0, 0, 0, 0);
-
-//     // Format the selected date as "yyyy-mm-dd"
-//     const formattedSelectedTanggal = selectedTanggal.toISOString().split('T')[0];
-//     // Apply filtering based on the selected criteria
-//     if (
-//       formattedSelectedTanggal === carDate.toISOString().split('T')[0]
-//       // (selectedTanggal.toString() === car.availableAt.toString())
-      
-//       // (selectedJmlPenumpang === '' || car.capacity >= selectedJmlPenumpang)
-//     ) 
-//      {
-//       return true; // Include the car in the filtered results
-//     }
-//     return false; // Exclude the car from the filtered results
-//   }
-
-//   // Apply the filter to all cars
-//   const filteredCars = allCars.filter(filterCars);
-
-//   // Handle the filtered cars, e.g., display them on the page
-// filteredCars.forEach(car => {
-//   console.log(car.availableAt);
-// });
-//   // You can replace this with code to display the filtered cars in the HTML.
-// });
